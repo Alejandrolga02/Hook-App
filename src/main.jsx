@@ -10,7 +10,7 @@ import { MultipleCustomHooks } from "./03-examples/MultipleCustomHooks";
 // import { HooksApp } from "./HooksApp.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-	// <React.StrictMode>
-	<MultipleCustomHooks />
-	// </React.StrictMode>
+	<React.StrictMode>
+		<MultipleCustomHooks />
+	</React.StrictMode>
 );
