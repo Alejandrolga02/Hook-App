@@ -16,7 +16,7 @@ import { Father } from "./07-task-memo/Father";
 // import { HooksApp } from "./HooksApp.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-	// <React.StrictMode>
-	<Father />
-	// </React.StrictMode>
+	<React.StrictMode>
+		<Father />
+	</React.StrictMode>
 );
