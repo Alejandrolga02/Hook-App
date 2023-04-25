@@ -17,11 +17,11 @@ export const todoReducer = (state = [], action) => {
 			return [action.payload , ...state];
 
 		case '[TODO] Delete Item':
-			return state.filter(task => task.id !== action.id);
+			return state.filter(task => task.id !== action.payload);
 
 		case '[TODO] Toggle Item':
 			return state.map((task) => {
-				if (task.id === action.id) {
+				if (task.id === action.payload) {
 					return {
 						...task,
 						done: !task.done

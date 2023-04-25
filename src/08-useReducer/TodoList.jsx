@@ -7,7 +7,7 @@ export const TodoList = ({ todos, dispatch }) => {
 	const deleteItem = useCallback(
 		(id) => {
 			return dispatch({
-				id,
+				payload: id,
 				type: '[TODO] Delete Item',
 			})
 		}
@@ -16,7 +16,7 @@ export const TodoList = ({ todos, dispatch }) => {
 	const toggleItem = useCallback(
 		(id) => {
 			return dispatch({
-				id,
+				payload: id,
 				type: '[TODO] Toggle Item',
 			})
 		}
