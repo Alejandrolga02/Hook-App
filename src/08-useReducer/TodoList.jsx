@@ -13,12 +13,21 @@ export const TodoList = ({ todos, dispatch }) => {
 		}
 	, []);
 
+	const toggleItem = useCallback(
+		(id) => {
+			return dispatch({
+				id,
+				type: '[TODO] Toggle Item',
+			})
+		}
+	, []);
+
 	return (
 		<>
 			<ul className="list-group">
 				{
 					todos.map((todo) => {
-						return <TodoItem key={todo.id} todo={todo} deleteItem={deleteItem}  />
+						return <TodoItem key={todo.id} todo={todo} deleteItem={deleteItem} toggleItem={toggleItem}  />
 					})
 				}
 			</ul>

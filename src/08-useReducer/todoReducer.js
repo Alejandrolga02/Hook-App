@@ -19,6 +19,17 @@ export const todoReducer = (initialState = [], action) => {
 		case '[TODO] Delete Item':
 			return initialState.filter(val => val.id !== action.id);
 
+		case '[TODO] Toggle Item':
+			return initialState.map((value) => {
+				if (value.id === action.id) {
+					return {
+						...value,
+						done: !value.done
+					}
+				}
+				return value;
+			});
+
 		default:
 			return initialState;
 	}
