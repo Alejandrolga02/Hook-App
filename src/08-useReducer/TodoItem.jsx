@@ -32,7 +32,7 @@ export const TodoItem = React.memo(({ todo, deleteItem, toggleItem }) => {
 
 TodoItem.propTypes = {
 	todo: PropTypes.object.isRequired,
-	deleteItem: PropTypes.func,
-	toggleItem: PropTypes.func
+	deleteItem: PropTypes.func.isRequired,
+	toggleItem: PropTypes.func.isRequired
 };
 TodoItem.displayName = "TodoItem";

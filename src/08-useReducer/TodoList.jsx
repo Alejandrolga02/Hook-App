@@ -1,27 +1,7 @@
 import PropTypes from "prop-types";
 import { TodoItem } from "./TodoItem";
-import { useCallback } from "react";
 
-export const TodoList = ({ todos, dispatch }) => {
-
-	const deleteItem = useCallback(
-		(id) => {
-			return dispatch({
-				payload: id,
-				type: '[TODO] Delete Item',
-			})
-		}
-	, []);
-
-	const toggleItem = useCallback(
-		(id) => {
-			return dispatch({
-				payload: id,
-				type: '[TODO] Toggle Item',
-			})
-		}
-	, []);
-
+export const TodoList = ({ todos, deleteItem, toggleItem }) => {
 	return (
 		<>
 			<ul className="list-group">
@@ -37,5 +17,6 @@ export const TodoList = ({ todos, dispatch }) => {
 
 TodoList.propTypes = {
 	todos: PropTypes.array.isRequired,
-	dispatch: PropTypes.func.isRequired
+	deleteItem: PropTypes.func.isRequired,
+	toggleItem: PropTypes.func.isRequired
 };

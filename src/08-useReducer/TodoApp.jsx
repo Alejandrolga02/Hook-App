@@ -24,6 +24,24 @@ export const TodoApp = () => {
 		}
 	, []);
 
+	const deleteItem = useCallback(
+		(id) => {
+			return dispatch({
+				payload: id,
+				type: '[TODO] Delete Item',
+			})
+		}
+	, []);
+
+	const toggleItem = useCallback(
+		(id) => {
+			return dispatch({
+				payload: id,
+				type: '[TODO] Toggle Item',
+			})
+		}
+	, []);
+
 	useEffect(() => {
 		localStorage.setItem('todos', JSON.stringify(todos));
 
@@ -43,7 +61,7 @@ export const TodoApp = () => {
 			<hr />
 			<div className="row">
 				<div className="col-7">
-					<TodoList todos={todos} dispatch={dispatch} />
+					<TodoList todos={todos} deleteItem={deleteItem} toggleItem={toggleItem} />
 				</div>
 				<div className="col-5">
 					<h4>Add TODO</h4>
