@@ -2,9 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 
 import "./index.css";
-import "./08-useReducer/intro-reducer";
+import { TodoApp } from "./08-useReducer/TodoApp";
+// import "./08-useReducer/intro-reducer";
 
-import { Father } from "./07-task-memo/Father";
+// import { Father } from "./07-task-memo/Father";
 // import { CallbackHook } from "./06-memos/CallbackHook";
 // import { MemoHook } from "./06-memos/MemoHook";
 // import { Memorize } from "./06-memos/Memorize";
@@ -19,6 +20,6 @@ import { Father } from "./07-task-memo/Father";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
 	<React.StrictMode>
-		<Father />
+		<TodoApp />
 	</React.StrictMode>
 );
