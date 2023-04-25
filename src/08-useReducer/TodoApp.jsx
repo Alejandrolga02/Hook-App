@@ -1,21 +1,23 @@
-import { useReducer } from "react";
-import { todoReducer } from "./todoReducer";
-
-const initialState = [
-	{
-		id: new Date().getTime(),
-		description: "Learning React",
-		done: false,
-	},
-	{
-		id: new Date().getTime() + 10,
-		description: "Joining a Gym",
-		done: false,
-	},
-];
+import { useCallback, useReducer } from "react";
+import { initialState, todoReducer } from "./todoReducer";
+import { TodoList } from "./TodoList";
+import { TodoAdd } from "./TodoAdd";
 
 export const TodoApp = () => {
-	const [todo, dispatch] = useReducer(todoReducer, initialState);
+	const [todos, dispatch] = useReducer(todoReducer, initialState);
+
+	const addTodo = useCallback(
+		(description) => {
+			dispatch({
+				type: '[TODO] Add Item',
+				payload: {
+					id: new Date().getTime(),
+					done: false,
+					description,
+				}
+			});
+		}
+	, []);
 
 	return (
 		<>
@@ -23,20 +25,12 @@ export const TodoApp = () => {
 			<hr />
 			<div className="row">
 				<div className="col-7">
-					<ul className="list-group">
-						<li className="list-group-item d-flex justify-content-between">
-							<span className="align-self-center" >Item 1</span>
-							<button className="btn btn-danger">Delete</button>
-						</li>
-					</ul>
+					<TodoList todos={todos} dispatch={dispatch} />
 				</div>
 				<div className="col-5">
-					<h4>Add ToDo</h4>
+					<h4>Add TODO</h4>
 					<hr />
-					<form>
-						<input type="text" placeholder="What do you want to do?" className="form-control" />
-						<button className="btn btn-primary" type="submit"></button>
-					</form>
+					<TodoAdd addTodo={addTodo} />
 				</div>
 			</div>
 		</>
