@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import { useForm } from '../hooks/useForm';
 
 export const TodoAdd = ({addTodo}) => {
-	const {onInputChange, description} = useForm({
+	const {onInputChange, onResetForm, description} = useForm({
 		description: ''
 	});
 	
@@ -12,6 +12,7 @@ export const TodoAdd = ({addTodo}) => {
 		if (description.length < 3) return;  
 
 		addTodo(description);
+		onResetForm();
 	}
 
 	return (

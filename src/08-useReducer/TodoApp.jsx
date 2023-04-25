@@ -1,10 +1,11 @@
-import { useCallback, useReducer } from "react";
+import { useCallback, useEffect, useReducer, useState } from "react";
 import { initialState, todoReducer } from "./todoReducer";
 import { TodoList } from "./TodoList";
 import { TodoAdd } from "./TodoAdd";
 
 export const TodoApp = () => {
 	const [todos, dispatch] = useReducer(todoReducer, initialState);
+	const [pendingTasks, setPendingTasks] = useState(0);
 
 	const addTodo = useCallback(
 		(description) => {
@@ -19,9 +20,20 @@ export const TodoApp = () => {
 		}
 	, []);
 
+	useEffect(() => {
+		const pendingTasksNumber = todos.reduce((counter, task) => {
+			if (!task.done) {
+				return counter + 1;
+			}
+			return counter;
+		}, 0);
+	
+		setPendingTasks(pendingTasksNumber);
+	}, [todos])
+	
 	return (
 		<>
-			<h1>TodoApp: 10 - <small>Pending: 10</small></h1>
+			<h1>TodoApp: {todos.length} - <small>Pending: {pendingTasks}</small></h1>
 			<hr />
 			<div className="row">
 				<div className="col-7">
