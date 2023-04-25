@@ -22,6 +22,8 @@ export const useTodo = () => {
 		}
 	, []);
 
+	const todosCount = todos.length;
+
 	const deleteItem = useCallback(
 		(id) => {
 			return dispatch({
@@ -58,6 +60,7 @@ export const useTodo = () => {
 		addTodo,
 		deleteItem,
 		toggleItem,
-		pendingTasks
+		pendingTasks,
+		todosCount
 	}
 }
