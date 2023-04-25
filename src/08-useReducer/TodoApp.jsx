@@ -3,8 +3,12 @@ import { initialState, todoReducer } from "./todoReducer";
 import { TodoList } from "./TodoList";
 import { TodoAdd } from "./TodoAdd";
 
+const init = () => {
+	return JSON.parse(localStorage.getItem('todos')) || [];
+}
+
 export const TodoApp = () => {
-	const [todos, dispatch] = useReducer(todoReducer, initialState);
+	const [todos, dispatch] = useReducer(todoReducer, initialState, init);
 	const [pendingTasks, setPendingTasks] = useState(0);
 
 	const addTodo = useCallback(
@@ -21,6 +25,8 @@ export const TodoApp = () => {
 	, []);
 
 	useEffect(() => {
+		localStorage.setItem('todos', JSON.stringify(todos));
+
 		const pendingTasksNumber = todos.reduce((counter, task) => {
 			if (!task.done) {
 				return counter + 1;

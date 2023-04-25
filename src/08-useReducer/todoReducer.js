@@ -1,14 +1,14 @@
 export const initialState = [
-	{
-		id: new Date().getTime(),
-		description: "Learning React",
-		done: false,
-	},
-	{
-		id: new Date().getTime() + 10,
-		description: "Joining a Gym",
-		done: false,
-	},
+	// {
+	// 	id: new Date().getTime(),
+	// 	description: "Learning React",
+	// 	done: false,
+	// },
+	// {
+	// 	id: new Date().getTime() + 10,
+	// 	description: "Joining a Gym",
+	// 	done: false,
+	// },
 ];
 
 export const todoReducer = (state = [], action) => {
