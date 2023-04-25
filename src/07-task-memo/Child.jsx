@@ -1,6 +1,7 @@
+import React from "react";
 import PropTypes from "prop-types";
 
-export const Child = ({ n, increment }) => {
+export const Child = React.memo(({ n, increment }) => {
 	console.log("  Me volví a generar :(  ");
 
 	return (
@@ -8,9 +9,11 @@ export const Child = ({ n, increment }) => {
 			{n}
 		</button>
 	);
-};
+});
 
 Child.propTypes = {
 	n: PropTypes.number.isRequired,
 	increment: PropTypes.func.isRequired,
 };
+
+Child.displayName = "Child";

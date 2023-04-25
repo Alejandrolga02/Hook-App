@@ -1,22 +1,22 @@
 import { Child } from "./Child";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 
 export const Father = () => {
-	const numeros = [2, 4, 6, 8, 10];
-	const [valor, setValor] = useState(0);
+	const numbers = [2, 4, 6, 8, 10];
+	const [value, setValue] = useState(0);
 
-	const increment = (num) => {
-		setValor(valor + num);
-	};
+	const increment = useCallback((num) => {
+		return setValue((value) => value + num);
+	}, []);
 
 	return (
 		<div>
 			<h1>Padre</h1>
-			<p> Total: {valor} </p>
+			<p> Total: {value} </p>
 
 			<hr />
 
-			{numeros.map((n) => (
+			{numbers.map((n) => (
 				<Child key={n} n={n} increment={increment} />
 			))}
 		</div>
