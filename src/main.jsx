@@ -2,6 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 
 import "./index.css";
+import "./08-useReducer/intro-reducer";
+
 import { Father } from "./07-task-memo/Father";
 // import { CallbackHook } from "./06-memos/CallbackHook";
 // import { MemoHook } from "./06-memos/MemoHook";
