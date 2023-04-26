@@ -15,10 +15,10 @@ export const TodoItem = React.memo(({ todo, deleteItem, toggleItem }) => {
 
 	return (
 			<li className="list-group-item d-flex justify-content-between">
-				<span className="align-self-center">{todo.description}</span>
+				<span aria-label='span' className="align-self-center">{todo.description}</span>
 				<div>
-					<button className="btn btn-danger" onClick={handleDeleteItem}>Delete</button>
-					<button className="btn btn-light" onClick={handleToggleItem}>
+					<button aria-label='delete-button' className="btn btn-danger" onClick={handleDeleteItem}>Delete</button>
+					<button aria-label='toggle-button' className="btn btn-light" onClick={handleToggleItem}>
 						{
 							(todo.done)
 								? <img src={circleCheck} alt="Done icon" />
