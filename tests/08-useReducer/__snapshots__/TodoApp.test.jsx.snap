@@ -1,0 +1,159 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`tests in TodoApp should show component 1`] = `
+<div>
+  <h1>
+    TodoApp: 
+    4
+     - 
+    <small>
+      Pending: 
+      3
+    </small>
+  </h1>
+  <hr />
+  <div
+    class="row"
+  >
+    <div
+      class="col-7"
+    >
+      <ul
+        class="list-group"
+      >
+        <li
+          class="list-group-item d-flex justify-content-between"
+        >
+          <span
+            aria-label="span"
+            class="align-self-center"
+          >
+            Get a job
+          </span>
+          <div>
+            <button
+              aria-label="delete-button"
+              class="btn btn-danger"
+            >
+              Delete
+            </button>
+            <button
+              aria-label="toggle-button"
+              class="btn btn-light"
+            >
+              <img
+                alt="Pending icon"
+                src=""
+              />
+            </button>
+          </div>
+        </li>
+        <li
+          class="list-group-item d-flex justify-content-between"
+        >
+          <span
+            aria-label="span"
+            class="align-self-center"
+          >
+            Joining a Gym
+          </span>
+          <div>
+            <button
+              aria-label="delete-button"
+              class="btn btn-danger"
+            >
+              Delete
+            </button>
+            <button
+              aria-label="toggle-button"
+              class="btn btn-light"
+            >
+              <img
+                alt="Pending icon"
+                src=""
+              />
+            </button>
+          </div>
+        </li>
+        <li
+          class="list-group-item d-flex justify-content-between"
+        >
+          <span
+            aria-label="span"
+            class="align-self-center"
+          >
+            Graduate from School
+          </span>
+          <div>
+            <button
+              aria-label="delete-button"
+              class="btn btn-danger"
+            >
+              Delete
+            </button>
+            <button
+              aria-label="toggle-button"
+              class="btn btn-light"
+            >
+              <img
+                alt="Pending icon"
+                src=""
+              />
+            </button>
+          </div>
+        </li>
+        <li
+          class="list-group-item d-flex justify-content-between"
+        >
+          <span
+            aria-label="span"
+            class="align-self-center"
+          >
+            Learn React
+          </span>
+          <div>
+            <button
+              aria-label="delete-button"
+              class="btn btn-danger"
+            >
+              Delete
+            </button>
+            <button
+              aria-label="toggle-button"
+              class="btn btn-light"
+            >
+              <img
+                alt="Done icon"
+                src=""
+              />
+            </button>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div
+      class="col-5"
+    >
+      <h4>
+        Add TODO
+      </h4>
+      <hr />
+      <form>
+        <input
+          class="form-control"
+          name="description"
+          placeholder="What do you want to do?"
+          type="text"
+          value=""
+        />
+        <button
+          class="btn btn-primary"
+          type="submit"
+        >
+          Add
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+`;
