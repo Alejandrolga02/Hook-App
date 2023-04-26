@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`tests in <MultipleCustomHooks /> should show a Quote 1`] = `
+<div>
+  <h1>
+    Breaking Bad Quotes
+  </h1>
+  <hr />
+  <blockquote
+    class="blockquote text-end"
+    style="display: flex; flex-direction: column; justify-content: end;"
+  >
+    <p
+      class="mb-3"
+    >
+      Test
+    </p>
+    <footer
+      class="blockquote-footer"
+    >
+      Alejandro
+    </footer>
+  </blockquote>
+  <code>
+    {"height":0,"width":0}
+  </code>
+  <button
+    class="btn btn-dark"
+  >
+    Next Quote
+  </button>
+</div>
+`;
