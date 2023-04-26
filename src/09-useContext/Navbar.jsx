@@ -1,17 +1,30 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 export const Navbar = () => {
 	return (
-		<>
-			<Link to="/" className="mx-2">
-				Home
-			</Link>
-			<Link to="/about" className="mx-2">
-				About
-			</Link>
-			<Link to="/login" className="mx-2">
-				Login
-			</Link>
-		</>
+		<nav data-bs-theme="dark" className="navbar bg-body-tertiary rounded-3">
+			<div className="container-fluid">
+				<Link className="navbar-brand" to="/">
+					Navbar
+				</Link>
+				<ul className="d-flex flex-row gap-2 navbar-nav">
+					<li className="nav-item">
+						<NavLink className={({ isActive }) => `nav-link ${isActive && "active"}`} to="/">
+							Home
+						</NavLink>
+					</li>
+					<li className="nav-item">
+						<NavLink className={({ isActive }) => `nav-link ${isActive && "active"}`} to="/about">
+							About
+						</NavLink>
+					</li>
+					<li className="nav-item">
+						<NavLink className={({ isActive }) => `nav-link ${isActive && "active"}`} to="/login">
+							Login
+						</NavLink>
+					</li>
+				</ul>
+			</div>
+		</nav>
 	);
 };
