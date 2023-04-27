@@ -16,7 +16,7 @@ export const TodoAdd = ({addTodo}) => {
 	}
 
 	return (
-		<form onSubmit={handleSubmit}>
+		<form aria-label='form' onSubmit={handleSubmit}>
 			<input name='description' onChange={onInputChange} value={description} type="text" placeholder="What do you want to do?" className="form-control" />
 			<button className="btn btn-primary" type="submit">Add</button>
 		</form>
