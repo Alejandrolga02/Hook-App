@@ -9,17 +9,17 @@ export const Navbar = () => {
 				</Link>
 				<ul className="d-flex flex-row gap-2 navbar-nav">
 					<li className="nav-item">
-						<NavLink className={({ isActive }) => `nav-link ${isActive && "active"}`} to="/">
+						<NavLink className={({ isActive }) => `nav-link ${isActive ? "active" : ''}`} to="/">
 							Home
 						</NavLink>
 					</li>
 					<li className="nav-item">
-						<NavLink className={({ isActive }) => `nav-link ${isActive && "active"}`} to="/about">
+						<NavLink className={({ isActive }) => `nav-link ${isActive ? "active" : ''}`} to="/about">
 							About
 						</NavLink>
 					</li>
 					<li className="nav-item">
-						<NavLink className={({ isActive }) => `nav-link ${isActive && "active"}`} to="/login">
+						<NavLink className={({ isActive }) => `nav-link ${isActive ? "active" : ''}`} to="/login">
 							Login
 						</NavLink>
 					</li>
